@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Kheirah Farm & Dairy Plant</title>
+    <link rel="icon" type="image/png" href="logo-company.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* ========================================
+        CSS (التصميم والتجاوب)
+        ========================================
+        */
+        :root {
+            /* متغيرات CSS لسهولة تغيير الألوان */
+            --primary-color: #096277; /* اللون الأساسي للشركة (أزرق داكن) */
+            --background-light: #f8f9fa;
+            --background-dark: #e9ecef;
+            --text-dark: #343a40;
+            --text-light: #6c757d;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, var(--background-light) 0%, var(--background-dark) 100%);
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            direction: rtl;
+            overflow-x: hidden;
+        }
+
+        /* 1. تنسيق الحاوية الرئيسية (شكل البطاقة الحديث) */
+        .container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+        }
+
+        /* 2. تنسيق اللوجو */
+        .company-logo {
+            width: auto; height: 100px;  object-fit: cover; margin-bottom: 20px;
+             transition: transform 0.3s ease;
+        }
+
+        /* 3. العناوين والنصوص */
+        h1 { color: var(--text-dark); font-size: 32px; font-weight: 900; margin-bottom: 10px; }
+        h2 { color: var(--primary-color); font-size: 20px; margin-bottom: 15px; font-weight: 700; }
+        .description-section p { color: var(--text-light); line-height: 1.7; margin-bottom: 35px; font-size: 16px; }
+
+        /* 4. تنسيق أزرار السوشيال ميديا */
+        .social-links {
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: stretch;
+             gap: 15px;
+             margin-top: 25px;
+         }
+
+        .social-btn {
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             width: 100%;
+             height: 60px;
+             border-radius: 10px;
+             color: white;
+             font-size: 18px; 
+             text-decoration: none;
+             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+            
+        /* تنسيق النص والأيقونة داخل الزر */
+        .social-btn i {
+            font-size: 24px;
+            margin-left: 10px; /* مسافة بين الأيقونة والنص (في اتجاه RTL) */
+            margin-right: 10px; /* مسافة بين الأيقونة والنص (في اتجاه RTL) */
+        }
+        .social-btn span {
+            font-weight: 700;
+        }
+
+        .social-btn:hover { transform: translateY(-5px) rotate(3deg); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); opacity: 0.9; }
+        .social-btn:active { transform: translateY(0) scale(0.95); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
+
+        /* ألوان الأزرار المخصصة */
+        .website-link { background-color: var(--primary-color); } 
+        .facebook { background-color: #1877f2; } 
+        .instagram { background-color: #E1306C; }
+        .whatsapp { background-color: #25D366; } 
+        .twitter { background-color: #1da1f2; } 
+        .linkedin { background-color: #0a66c2; }
+        .email-link { background-color: #3b3b3b; } /* Dark grey for email link */
+
+        /* >>> التنسيق الجديد والأفضل للـ Footer <<< */
+        footer {
+            width: 100%;
+            padding: 15px 0;
+            margin-top: 30px; 
+            color: var(--text-light); /* لون فاتح متناسق */
+            font-size: 14px;
+            text-align: center;
+            z-index: 100;
+        }
+        
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease-in-out; 
+        }
+        
+        footer a:hover {
+            color: var(--text-dark); 
+            text-decoration: none; 
+        }
+
+
+        /* 5. تنسيق التجاوب */
+        @media (max-width: 480px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 26px; }
+            .social-btn { height: 50px; font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="logo-section">
+            <img src="logo-company.png" alt="لوجو الشركة" class="company-logo" id="companyLogo">
+            <h1 id="companyName">جارٍ التحميل...</h1>
+        </header>
+
+        <main class="description-section">
+            <h2 id="mainHeading"></h2>
+            <p id="companyDescription"></p>
+        </main>
+
+        <section class="social-links" id="socialLinksContainer">
+            </section>
+    </div>
+
+    <footer>
+        <a href="https://connect-globale.com" target="_blank">Powered by Connect Media</a>
+    </footer>
+    <script>
+        /* ========================================
+        JSON Data Simulation (بيانات الشركة)
+        ========================================
+        */
+        const companyData = {
+            name: "مزرعة ومعمل الخيرة", 
+            logoSrc: "logo-company.png", 
+            mainHeading: "Al Kheirah Farm & Dairy Plant",
+            description: "Our dairy products are crafted from our farms directly to your table. All our products are manufactured in our facility located at IDRAC Center – Chamber of Commerce and Industry, following the highest standards of quality and food safety. Our products also undergo laboratory testing to ensure freshness and trust.",
+            socialMedia: [
+                {
+                    platform: "للتواصل عبر الواتساب (71086505)",
+                    url: "https://wa.me/96171086505", 
+                    iconClass: "fab fa-whatsapp",
+                    cssClass: "whatsapp"
+                },
+                {
+                    platform: "صفحتنا على فيسبوك",
+                    url:"https://www.facebook.com/samatileslebanon?mibextid=ZbWKwL",
+                    iconClass: "fab fa-facebook-f",
+                    cssClass: "facebook"
+                },
+                {
+                    platform: "تابعونا على إنستغرام",
+                    url: "https://www.instagram.com/alkheira.farm?igsh=MTNzaTZ2YzRpa3NuNw==",
+                    iconClass: "fab fa-instagram",
+                    cssClass: "instagram"
+                },
+                {
+                    platform: "البريد الإلكتروني",
+                    url: "mailto:Akheirafarm@gmail.com", 
+                    iconClass: "fas fa-envelope", // أيقونة الرسالة
+                    cssClass: "email-link" // كلاس اللون الجديد
+                }
+            ]
+        };
+
+
+        /* ========================================
+        JavaScript (قراءة البيانات وعرضها)
+        ========================================
+        */
+        document.addEventListener('DOMContentLoaded', () => {
+            const data = companyData; 
+
+            // عرض البيانات الأساسية
+            document.getElementById('companyName').textContent = data.name;
+            document.getElementById('mainHeading').textContent = data.mainHeading;
+            document.getElementById('companyDescription').textContent = data.description;
+            document.getElementById('companyLogo').src = data.logoSrc;
+
+            // إنشاء الأزرار
+            const socialContainer = document.getElementById('socialLinksContainer');
+            data.socialMedia.forEach(item => {
+                const link = document.createElement('a');
+                link.href = item.url;
+                link.target = "_blank";
+                link.className = `social-btn ${item.cssClass}`;
+                link.title = item.platform;
+                
+                const icon = document.createElement('i');
+                icon.className = item.iconClass;
+
+                const textSpan = document.createElement('span');
+                textSpan.textContent = item.platform; 
+
+                link.appendChild(textSpan);
+                link.appendChild(icon);
+                
+                socialContainer.appendChild(link);
+            });
+        });
+    </script>
+
+</body>
+</html>
